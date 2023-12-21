@@ -1,7 +1,0 @@
-case123分别对应
-    # Case 1: Popup several panels
-    # Case 2: Close several panels
-    # Case 3: Manipulate one panel
-附赠一个case4，也属于Case 3: Manipulate one panel的情况
-
-case5是那个只有饱和度变化的情况
