@@ -1,0 +1,919 @@
+{
+    "panel": [
+        {
+            "name": "Timeline",
+            "rectangle": [
+                0,
+                87,
+                783,
+                631
+            ],
+            "editing_control": [
+                [
+                    {
+                        "name": "\u526a\u8f91",
+                        "rectangle": [
+                            59,
+                            93,
+                            81,
+                            105
+                        ]
+                    },
+                    {
+                        "name": "Lumetri \u8303\u56f4",
+                        "rectangle": [
+                            132,
+                            93,
+                            199,
+                            106
+                        ]
+                    },
+                    {
+                        "name": "\u6548\u679c \u63a7\u4ef6",
+                        "rectangle": [
+                            244,
+                            94,
+                            295,
+                            105
+                        ]
+                    },
+                    {
+                        "name": "\u97f3\u9891 \u526a\u8f91 \u6df7\u5408\u5668 : My Sequence",
+                        "rectangle": [
+                            339,
+                            93,
+                            503,
+                            108
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "00 : 00 : 00",
+                        "rectangle": [
+                            20,
+                            539,
+                            75,
+                            549
+                        ]
+                    },
+                    {
+                        "name": ": 00",
+                        "rectangle": [
+                            76,
+                            538,
+                            94,
+                            547
+                        ]
+                    },
+                    {
+                        "name": "00 : 00 : 00 : 00",
+                        "rectangle": [
+                            675,
+                            540,
+                            750,
+                            548
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "\u2192\u2192 }",
+                        "rectangle": [
+                            450,
+                            603,
+                            465,
+                            613
+                        ]
+                    }
+                ]
+            ],
+            "button": [
+                {
+                    "name": "add marker",
+                    "rectangle": [
+                        191,
+                        597,
+                        221,
+                        622
+                    ]
+                },
+                {
+                    "name": "add marker",
+                    "rectangle": [
+                        373,
+                        597,
+                        403,
+                        622
+                    ]
+                }
+            ],
+            "asset_bar": null,
+            "timeline": null
+        },
+        {
+            "name": "Program",
+            "rectangle": [
+                783,
+                87,
+                1562,
+                631
+            ],
+            "button": [
+                {
+                    "name": "Add Marker",
+                    "rectangle": [
+                        1340,
+                        597,
+                        1372,
+                        624
+                    ]
+                }
+            ],
+            "timeline": null,
+            "media asset": {
+                "name": "media asset",
+                "rectangle": [
+                    798,
+                    128,
+                    1547,
+                    532
+                ],
+                "children": {}
+            }
+        },
+        {
+            "name": "Project",
+            "rectangle": [
+                0,
+                631,
+                284,
+                1020
+            ],
+            "editing_control": [
+                [
+                    {
+                        "name": "\u9879\u76ee : Exporting Your Project_Edited",
+                        "rectangle": [
+                            14,
+                            640,
+                            190,
+                            652
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "Exporting Your Project_Edited.prproj",
+                        "rectangle": [
+                            44,
+                            672,
+                            220,
+                            683
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "+",
+                        "rectangle": [
+                            231,
+                            780,
+                            242,
+                            787
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "Clip L.mp4",
+                        "rectangle": [
+                            24,
+                            804,
+                            66,
+                            813
+                        ]
+                    },
+                    {
+                        "name": "5:15",
+                        "rectangle": [
+                            107,
+                            805,
+                            124,
+                            811
+                        ]
+                    },
+                    {
+                        "name": "Clip 2.mp4",
+                        "rectangle": [
+                            146,
+                            804,
+                            187,
+                            813
+                        ]
+                    },
+                    {
+                        "name": "12:14",
+                        "rectangle": [
+                            225,
+                            804,
+                            246,
+                            811
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "Clip 3.mp4",
+                        "rectangle": [
+                            24,
+                            904,
+                            64,
+                            912
+                        ]
+                    },
+                    {
+                        "name": "4:12",
+                        "rectangle": [
+                            107,
+                            905,
+                            123,
+                            911
+                        ]
+                    },
+                    {
+                        "name": "Music",
+                        "rectangle": [
+                            145,
+                            904,
+                            169,
+                            911
+                        ]
+                    },
+                    {
+                        "name": ": 05 : 10909",
+                        "rectangle": [
+                            206,
+                            905,
+                            245,
+                            911
+                        ]
+                    }
+                ]
+            ],
+            "search": null,
+            "button": [
+                {
+                    "name": "new bins",
+                    "rectangle": [
+                        10,
+                        664,
+                        35,
+                        696
+                    ]
+                },
+                {
+                    "name": "Icon View",
+                    "rectangle": [
+                        225,
+                        691,
+                        254,
+                        721
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Timeline",
+            "rectangle": [
+                284,
+                631,
+                336,
+                1020
+            ],
+            "editing_control": [
+                [
+                    {
+                        "name": "+",
+                        "rectangle": [
+                            302,
+                            762,
+                            315,
+                            777
+                        ]
+                    }
+                ]
+            ],
+            "button": [],
+            "asset_bar": null,
+            "timeline": null
+        },
+        {
+            "name": "Timeline",
+            "rectangle": [
+                336,
+                631,
+                1443,
+                1020
+            ],
+            "editing_control": [
+                [
+                    {
+                        "name": "My Sequence",
+                        "rectangle": [
+                            367,
+                            643,
+                            430,
+                            653
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "00 : 00 : 00 : 00",
+                        "rectangle": [
+                            356,
+                            668,
+                            441,
+                            678
+                        ]
+                    },
+                    {
+                        "name": ": 00",
+                        "rectangle": [
+                            574,
+                            677,
+                            590,
+                            687
+                        ]
+                    },
+                    {
+                        "name": ":",
+                        "rectangle": [
+                            589,
+                            679,
+                            592,
+                            687
+                        ]
+                    },
+                    {
+                        "name": "00",
+                        "rectangle": [
+                            593,
+                            679,
+                            604,
+                            689
+                        ]
+                    },
+                    {
+                        "name": "00 : 00 : 04 : 23",
+                        "rectangle": [
+                            661,
+                            679,
+                            717,
+                            687
+                        ]
+                    },
+                    {
+                        "name": "00 : 00 : 09 : 23",
+                        "rectangle": [
+                            775,
+                            679,
+                            831,
+                            688
+                        ]
+                    },
+                    {
+                        "name": "00 : 00 : 14 : 23",
+                        "rectangle": [
+                            890,
+                            679,
+                            945,
+                            687
+                        ]
+                    },
+                    {
+                        "name": "\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 .. \u2026\u2026\u2026\u2026\u2026\u2026\u2026 .... \u2026\u2026\u2026\u2026 ... \u2026\u2026\u2026 .. \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 ... ..",
+                        "rectangle": [
+                            925,
+                            693,
+                            1415,
+                            704
+                        ]
+                    },
+                    {
+                        "name": "00 : 00 : 19 : 23",
+                        "rectangle": [
+                            1004,
+                            678,
+                            1058,
+                            688
+                        ]
+                    },
+                    {
+                        "name": "00 : 00 : 24 : 23",
+                        "rectangle": [
+                            1117,
+                            678,
+                            1173,
+                            688
+                        ]
+                    },
+                    {
+                        "name": "00 : 00 : 29 : 23",
+                        "rectangle": [
+                            1231,
+                            679,
+                            1288,
+                            687
+                        ]
+                    },
+                    {
+                        "name": "00 : 00 : 34 : 23",
+                        "rectangle": [
+                            1346,
+                            678,
+                            1402,
+                            688
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "fx Clip",
+                        "rectangle": [
+                            586,
+                            743,
+                            619,
+                            753
+                        ]
+                    },
+                    {
+                        "name": "Clip",
+                        "rectangle": [
+                            731,
+                            742,
+                            746,
+                            753
+                        ]
+                    },
+                    {
+                        "name": "Clip",
+                        "rectangle": [
+                            835,
+                            743,
+                            849,
+                            752
+                        ]
+                    },
+                    {
+                        "name": ",",
+                        "rectangle": [
+                            863,
+                            744,
+                            865,
+                            752
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "Vi",
+                        "rectangle": [
+                            411,
+                            765,
+                            422,
+                            775
+                        ]
+                    },
+                    {
+                        "name": "\u89c6\u9891",
+                        "rectangle": [
+                            438,
+                            768,
+                            462,
+                            780
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "A",
+                        "rectangle": [
+                            443,
+                            797,
+                            452,
+                            804
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": ".",
+                        "rectangle": [
+                            440,
+                            858,
+                            456,
+                            868
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "Al",
+                        "rectangle": [
+                            410,
+                            882,
+                            421,
+                            891
+                        ]
+                    },
+                    {
+                        "name": "\u97f3\u9891",
+                        "rectangle": [
+                            439,
+                            881,
+                            463,
+                            894
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "RUMARA",
+                        "rectangle": [
+                            579,
+                            909,
+                            621,
+                            918
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "0.0",
+                        "rectangle": [
+                            483,
+                            933,
+                            496,
+                            940
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "\u58f0\u9053",
+                        "rectangle": [
+                            419,
+                            950,
+                            444,
+                            962
+                        ]
+                    },
+                    {
+                        "name": ".",
+                        "rectangle": [
+                            479,
+                            959,
+                            481,
+                            968
+                        ]
+                    }
+                ]
+            ],
+            "button": [
+                {
+                    "name": "add marker",
+                    "rectangle": [
+                        1406,
+                        961,
+                        1436,
+                        986
+                    ]
+                }
+            ],
+            "asset_bar": null,
+            "timeline": null
+        },
+        {
+            "name": "Timeline",
+            "rectangle": [
+                1443,
+                631,
+                1562,
+                1020
+            ],
+            "editing_control": [
+                [
+                    {
+                        "name": "-30",
+                        "rectangle": [
+                            1532,
+                            821,
+                            1546,
+                            827
+                        ]
+                    }
+                ]
+            ],
+            "button": [],
+            "asset_bar": null,
+            "timeline": null
+        },
+        {
+            "name": "Timeline",
+            "rectangle": [
+                1562,
+                87,
+                1920,
+                1020
+            ],
+            "editing_control": [
+                [
+                    {
+                        "name": "Lumetri \u989c\u8272",
+                        "rectangle": [
+                            1576,
+                            93,
+                            1644,
+                            106
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "Clip 1.mp4",
+                        "rectangle": [
+                            1597,
+                            127,
+                            1648,
+                            138
+                        ]
+                    },
+                    {
+                        "name": "My Sequence",
+                        "rectangle": [
+                            1679,
+                            127,
+                            1742,
+                            138
+                        ]
+                    },
+                    {
+                        "name": "Clip",
+                        "rectangle": [
+                            1755,
+                            127,
+                            1772,
+                            138
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "fx",
+                        "rectangle": [
+                            1576,
+                            148,
+                            1590,
+                            158
+                        ]
+                    },
+                    {
+                        "name": "Lumetri \u989c\u8272",
+                        "rectangle": [
+                            1608,
+                            146,
+                            1676,
+                            161
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "\u57fa\u672c \u6821\u6b63",
+                        "rectangle": [
+                            1576,
+                            184,
+                            1626,
+                            197
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "\u8f93\u5165 LUT",
+                        "rectangle": [
+                            1592,
+                            215,
+                            1640,
+                            227
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "\u767d\u5e73\u8861",
+                        "rectangle": [
+                            1593,
+                            246,
+                            1630,
+                            258
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "\u8272\u8c03",
+                        "rectangle": [
+                            1592,
+                            277,
+                            1617,
+                            289
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "\u9971\u548c",
+                        "rectangle": [
+                            1592,
+                            303,
+                            1617,
+                            316
+                        ]
+                    },
+                    {
+                        "name": "100.0",
+                        "rectangle": [
+                            1861,
+                            308,
+                            1885,
+                            315
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "\u521b\u610f",
+                        "rectangle": [
+                            1577,
+                            340,
+                            1599,
+                            351
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "\u66f2\u7ebf",
+                        "rectangle": [
+                            1577,
+                            381,
+                            1601,
+                            393
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "\u5339\u914d",
+                        "rectangle": [
+                            1617,
+                            421,
+                            1640,
+                            433
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "name": "HSL \u8f85\u52a9",
+                        "rectangle": [
+                            1575,
+                            461,
+                            1623,
+                            476
+                        ]
+                    }
+                ]
+            ],
+            "button": [],
+            "asset_bar": null,
+            "timeline": null
+        },
+        {
+            "name": "Learn",
+            "rectangle": [
+                0,
+                43,
+                1920,
+                87
+            ]
+        },
+        {
+            "name": "Tools",
+            "rectangle": [
+                0,
+                1020,
+                1920,
+                1040
+            ],
+            "button": []
+        }
+    ],
+    "menu": [
+        {
+            "name": "\u5e94\u7528\u7a0b\u5e8f",
+            "rectangle": [
+                0,
+                23,
+                1920,
+                42
+            ],
+            "children": [
+                {
+                    "name": "\u6587\u4ef6(F)",
+                    "rectangle": [
+                        0,
+                        23,
+                        52,
+                        42
+                    ]
+                },
+                {
+                    "name": "\u7f16\u8f91(E)",
+                    "rectangle": [
+                        52,
+                        23,
+                        105,
+                        42
+                    ]
+                },
+                {
+                    "name": "\u526a\u8f91(C)",
+                    "rectangle": [
+                        105,
+                        23,
+                        159,
+                        42
+                    ]
+                },
+                {
+                    "name": "\u5e8f\u5217(S)",
+                    "rectangle": [
+                        159,
+                        23,
+                        212,
+                        42
+                    ]
+                },
+                {
+                    "name": "\u6807\u8bb0(M)",
+                    "rectangle": [
+                        212,
+                        23,
+                        270,
+                        42
+                    ]
+                },
+                {
+                    "name": "\u56fe\u5f62(G)",
+                    "rectangle": [
+                        270,
+                        23,
+                        325,
+                        42
+                    ]
+                },
+                {
+                    "name": "\u89c6\u56fe(V)",
+                    "rectangle": [
+                        325,
+                        23,
+                        379,
+                        42
+                    ]
+                },
+                {
+                    "name": "\u7a97\u53e3(W)",
+                    "rectangle": [
+                        379,
+                        23,
+                        437,
+                        42
+                    ]
+                },
+                {
+                    "name": "\u5e2e\u52a9(H)",
+                    "rectangle": [
+                        437,
+                        23,
+                        492,
+                        42
+                    ]
+                }
+            ]
+        }
+    ]
+}
