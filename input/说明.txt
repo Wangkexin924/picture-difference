@@ -1,0 +1,5 @@
+# Case 1: Popup several panels
+# Case 2: Close several panels
+# Case 3: 星星
+# Case 4: Manipulate one panel
+# Case 5: Manipulate one panel
