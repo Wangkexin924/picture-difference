@@ -1,5 +1,7 @@
 # Case 1: Popup several panels
 # Case 2: Close several panels
-# Case 3: 星星
-# Case 4: Manipulate one panel
-# Case 5: Manipulate one panel
+# Case 3: Manipulate one panel
+# Case 4: 饱和度
+# Case 5: 星星
+# Case 6: 新版json文件 (true)
+# Case 7: 新版json文件+星星（fake）

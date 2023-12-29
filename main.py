@@ -4,9 +4,11 @@ from PIL import Image
 import re
 from cnocr import CnOcr
 import matplotlib
-
+import json
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
+
+import time
 
 
 def pixel_diff_detection(image1, image2, threshold):
@@ -14,7 +16,7 @@ def pixel_diff_detection(image1, image2, threshold):
     gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
     gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
 
-    print(gray1.shape, gray2.shape)
+    # print(gray1.shape, gray2.shape)
 
     # 计算每个像素的差异值
     diff = cv2.absdiff(gray1, gray2)
@@ -73,6 +75,30 @@ def update_rectangle(out, json1, image1, image2, x1, y1, x2, y2):
         cv2.imwrite('cropped_lat.png', cropped_lat)
 
 
+def calculate_extended_rectangle(left, top, right, bottom, width, height, threshold):
+    x1 = max(left - threshold, 0)
+    y1 = max(top - threshold, 0)
+    x2 = min(right + threshold, width)
+    y2 = min(bottom + threshold, height - 40)
+    return x1, y1, x2, y2
+
+
+def find_green_boxes(data, rectangles):
+    for item in data:
+        if isinstance(item, dict):
+            properties = item.get("properties")
+            if properties is not None:
+                rectangle = properties.get("rectangle")
+                if rectangle is not None:
+                    rectangles.append(rectangle)
+
+        elif isinstance(item, list):
+            find_green_boxes(item, rectangles)
+
+    rectangles=[(x1, y1, x2, y2) for x1, y1, x2, y2 in rectangles]
+    return rectangles
+
+
 def calculate_area_percentage(red_box, green_boxes):
     red_area = (red_box[2] - red_box[0]) * (red_box[3] - red_box[1])  # 计算红框面积
     intersected_green_boxes = []  # 存储有相交面积的绿框位置
@@ -94,24 +120,18 @@ def calculate_area_percentage(red_box, green_boxes):
     return intersected_green_boxes, areas_percentage
 
 
-def is_one_more():
-    img = cv2.imread('./input/case3/lat.png')
-    # TODO：green_boxes大panel需要一个生成输入，现在做的是从json自己手动总结的
-    red_box = (12, 98, 1072, 626)  # 红框坐标，变化区域
-    green_boxes = [(0, 87, 783, 631), (783, 87, 1562, 631), (0, 631, 284, 1020), (284, 631, 336, 1020),
-                   (336, 631, 1443, 1020), (1443, 631, 1562, 1020), (1562, 87, 1920, 1020), (0, 43, 1920, 87),
-                   (0, 1020, 1920, 1040), (0, 23, 1920, 42)]
-    # 绿框坐标列表，大panel
+def is_one_more(img, red_box, green_boxes):
+    # 在图像img上绘制红框（变化区域）和绿框（大panel）
 
-    # 在图像上绘制红框和绿框
-    cv2.rectangle(img, (12, 98), (1072, 626), (0, 0, 255), 2)  # 绘制红框
-    for green_box in green_boxes:
-        x1, y1, x2, y2 = green_box
-        cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)  # 绘制绿框
+    # # 在图像上绘制红框和绿框
+    # cv2.rectangle(img, (12, 98), (1072, 626), (0, 0, 255), 2)  # 绘制红框
+    # for green_box in green_boxes:
+    #     x1, y1, x2, y2 = green_box
+    #     cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)  # 绘制绿框
 
     # 计算红框被绿框分割后的面积和百分比
     green_areas, areas_percentage = calculate_area_percentage(red_box, green_boxes)
-    print(green_areas, areas_percentage)
+    # print(green_areas, areas_percentage)
 
     # -----从这里，上边获得了percentage，加一个判断
 
@@ -122,8 +142,8 @@ def is_one_more():
             selected_green_areas.append(green_areas[i])
             selected_areas_percentage.append(areas_percentage[i])
 
-    print("保留的green_areas：", selected_green_areas)
-    print("对应位置的保留的areas_percentage：", selected_areas_percentage)
+    # print("保留的green_areas：", selected_green_areas)
+    # print("对应位置的保留的areas_percentage：", selected_areas_percentage)
 
     if selected_green_areas:  # 不为空
         flag = 1
@@ -152,7 +172,7 @@ def crop_one_more(red_box, selected_green_areas, image1, image2):
     # 定义最大的矩形
     max_rectangle = (min_x, min_y, max_x, max_y)
 
-    print("最大的矩形坐标：", max_rectangle)
+    # print("最大的矩形坐标：", max_rectangle)
 
     # 截取图像
     cropped_pre = image1[min_y:max_y, min_x:max_x]
@@ -166,6 +186,10 @@ def picture_differrence(image1, image2, json1, json2):
     image1 = cv2.imread(image1)
     image2 = cv2.imread(image2)
 
+    with open(json1, "r") as f:
+        json1 = json.load(f)
+    with open(json2, "r") as f:
+        json2 = json.load(f)
     # 检测像素差异
     # 设置阈值（根据实际情况调整）
     threshold = 90
@@ -196,43 +220,15 @@ def picture_differrence(image1, image2, json1, json2):
 
     # 获取图像尺寸
     height, width = image.shape
-    # 定义初始值
-    top = height
-    bottom = 0
-    left = width
-    right = 0
 
-    # 从上方开始遍历像素，找到第一个白色像素的位置
-    for y in range(height):
-        for x in range(width):
-            if image[y, x] == 255:
-                if y < top:
-                    top = y
-                break  # 提前终止内层循环
+    # 找到所有白色像素的位置
+    white_pixels = np.where(image == 255)
 
-    # 从下方开始遍历像素，找到第一个白色像素的位置
-    for y in range(height - 1, -1, -1):
-        for x in range(width):
-            if image[y, x] == 255:
-                if y > bottom:
-                    bottom = y
-                break  # 提前终止内层循环
-
-    # 从左侧开始遍历像素，找到第一个白色像素的位置
-    for x in range(width):
-        for y in range(height):
-            if image[y, x] == 255:
-                if x < left:
-                    left = x
-                break  # 提前终止内层循环
-
-    # 从右侧开始遍历像素，找到第一个白色像素的位置
-    for x in range(width - 1, -1, -1):
-        for y in range(height):
-            if image[y, x] == 255:
-                if x > right:
-                    right = x
-                break  # 提前终止内层循环
+    # 更新矩形框的边界
+    top = white_pixels[0].min()
+    bottom = white_pixels[0].max()
+    left = white_pixels[1].min()
+    right = white_pixels[1].max()
 
     # 计算矩形框的坐标
     x1 = left
@@ -240,33 +236,12 @@ def picture_differrence(image1, image2, json1, json2):
     x2 = right
     y2 = bottom
 
-    # # # 扩大边缘
-    # # # 计算矩形框的坐标
-    # if left - threshold > 0:
-    #     x1 = left - threshold
-    # else:
-    #     x1 = 0
-    #
-    # if top - threshold > 0:
-    #     y1 = top - threshold
-    # else:
-    #     y1 = 0
-    #
-    # if right + threshold < width:
-    #     x2 = right + threshold
-    # else:
-    #     x2 = width
-    #
-    # if bottom + threshold < height - 40:
-    #     y2 = bottom + threshold
-    # else:
-    #     y2 = height - 40
+    # # 扩大边缘
+    # x1, y1, x2, y2 = calculate_extended_rectangle(left, top, right, bottom, width, height, threshold)
 
     # print(width, height)  # 1920 1080
-    print((x1, y1), (x2, y2))  # (12, 98) (1072, 626)
+    # print((x1, y1), (x2, y2))  # (12, 98) (1072, 626)
     # print((x2-x1)*(y2-y1))
-
-    # TODO: 检测最匹配的矩形，从而获得json数据
 
     # 根据矩形框在（先or后）原图上去截（一张）图
     # Case 1: Popup several panels
@@ -280,11 +255,6 @@ def picture_differrence(image1, image2, json1, json2):
     # elif case == 3:
     #     cropped_pre = image1  # origin，其实均可
 
-    # # 截取图像
-    # cropped_image = cropped_pre[y1:y2, x1:x2]
-    # cv2.imwrite('cropped_image.png', cropped_image)
-
-    # DONE: 修改思路：output两张，分别是在原图（先and后）上去截的图
 
     # 截取图像
     cropped_pre = image1[y1:y2, x1:x2]
@@ -293,16 +263,16 @@ def picture_differrence(image1, image2, json1, json2):
     cv2.imwrite('cropped_pre.png', cropped_pre)
     cv2.imwrite('cropped_lat.png', cropped_lat)
 
-    # # TODO: 出现问题截图不全一个panel，是否需要根据json信息
-    # 需要判断什么时候去再截一遍图
+    # 判断截图是否有问题，是否要再多一步
     # 面积比例是否都不在10~60之间，如果有在这个范围的就断定为需要再截一遍图
-    # selected_green_areas, selected_areas_percentage, flag = [], [], 0
-
-    selected_green_areas, selected_areas_percentage, flag = is_one_more()
     red_box = (x1, y1, x2, y2)
+    rectangles = []
+    green_boxes = find_green_boxes(json2.values(),rectangles)  # json2 lat
+    selected_green_areas, selected_areas_percentage, flag = is_one_more(image1, red_box, green_boxes)
+
+    # 需要是否需要截一遍图
     if flag == 1:
         crop_one_more(red_box, selected_green_areas, image1, image2)
-    #
 
     # # 思路：截图到数字、小数后，从json中把前一个panel的rectangle获取然后拼接（前一个panel），给一个更完整的图
     # # 参数可以调整，不够一个panel的情况
@@ -318,10 +288,11 @@ def picture_differrence(image1, image2, json1, json2):
 
 
 if __name__ == '__main__':
-    # 读取两张截图
-    # input
+    # 记录开始时间
+    start_time = time.perf_counter()
 
-    case: int = 3
+    # input
+    case: int = 5
     # 暂时不再区分case，只用作简易地更改下边input文件
 
     image1 = './input/case{}/pre.png'.format(case)
@@ -333,3 +304,10 @@ if __name__ == '__main__':
     # 输出差异截图
     # picture_differrence(case, image1, image2)  # 结果输出到'cropped_image.png'
     picture_differrence(image1, image2, json1, json2)  # 结果输出到'cropped_pre.png'和'cropped_lat.png'
+
+    # 记录结束时间
+    end_time = time.perf_counter()
+    
+    # 计算整个代码的运行时间
+    run_time = end_time - start_time
+    print("代码运行时间：", run_time, "秒")

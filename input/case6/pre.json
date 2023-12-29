@@ -156,21 +156,6 @@
                                     "properties": {
                                         "friendly_class_name": "Pane",
                                         "texts": [
-                                            "SubWindow"
-                                        ],
-                                        "rectangle": [
-                                            25,
-                                            730,
-                                            131,
-                                            790
-                                        ]
-                                    },
-                                    "children": []
-                                },
-                                {
-                                    "properties": {
-                                        "friendly_class_name": "Pane",
-                                        "texts": [
                                             "OS_ViewContainer"
                                         ],
                                         "rectangle": [

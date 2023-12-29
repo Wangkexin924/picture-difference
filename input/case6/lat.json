@@ -96,9 +96,9 @@
                                             "SubWindow"
                                         ],
                                         "rectangle": [
-                                            818,
+                                            798,
                                             128,
-                                            1527,
+                                            1547,
                                             527
                                         ]
                                     },
@@ -152,21 +152,6 @@
                                 ]
                             },
                             "children": [
-                                {
-                                    "properties": {
-                                        "friendly_class_name": "Pane",
-                                        "texts": [
-                                            "SubWindow"
-                                        ],
-                                        "rectangle": [
-                                            25,
-                                            730,
-                                            131,
-                                            790
-                                        ]
-                                    },
-                                    "children": []
-                                },
                                 {
                                     "properties": {
                                         "friendly_class_name": "Pane",

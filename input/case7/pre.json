@@ -1,5 +1,5 @@
 {
-    "Adobe Premiere Pro 2021 - D:\\Program Files\\Pr\\\u9879\u76ee\\test1.prproj *": [
+    "Adobe Premiere Pro 2021 - D:\\Program Files\\Pr\\\u9879\u76ee\\test1.prproj": [
         {
             "properties": {
                 "friendly_class_name": "Pane",
@@ -152,21 +152,6 @@
                                 ]
                             },
                             "children": [
-                                {
-                                    "properties": {
-                                        "friendly_class_name": "Pane",
-                                        "texts": [
-                                            "SubWindow"
-                                        ],
-                                        "rectangle": [
-                                            25,
-                                            730,
-                                            131,
-                                            790
-                                        ]
-                                    },
-                                    "children": []
-                                },
                                 {
                                     "properties": {
                                         "friendly_class_name": "Pane",
